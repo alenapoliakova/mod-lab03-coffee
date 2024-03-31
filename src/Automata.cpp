@@ -27,7 +27,7 @@ void Automata::on() {
         getMenu();
         getState();
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
@@ -37,7 +37,7 @@ void Automata::off() {
         state = OFF;
         getState();
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
@@ -45,13 +45,13 @@ void Automata::coin(int money) {
     // Add money to the vending machine
     if (state == WAIT || state == ACCEPT) {
         if (money < 0) {
-            throw std::std::invalid_argument("Error, incorrect value");
+            throw std::invalid_argument("Error, incorrect value");
         }
         state = ACCEPT;
         cash += money;
         getState();
     } else {
-        throw std::std::domain_error("Error, Incorrect operation");
+        throw std::domain_error("Error, Incorrect operation");
     }
 }
 
@@ -63,7 +63,7 @@ void Automata::cancel() {
         getCash();
         getState();
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
@@ -71,14 +71,14 @@ void Automata::choice(int menu_position) {
     // Select a drink from the menu
     if (state == ACCEPT) {
         if (sizeof(menu) < menu_position || menu_position <= 0) {
-            throw std::std::invalid_argument("Error, incorrect value");
+            throw std::invalid_argument("Error, incorrect value");
         }
         state = CHECK;
         option = menu_position;
         std::cout << "Your choice is " << menu[option - 1] << std::endl;
         getState();
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
@@ -91,7 +91,7 @@ bool Automata::check() {
         getState();
         return false;
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
@@ -103,7 +103,7 @@ void Automata::cook() {
         getCash();
         getState();
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
@@ -114,7 +114,7 @@ void Automata::finish() {
         getCash();
         getState();
     } else {
-        throw std::std::domain_error("Error, incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
