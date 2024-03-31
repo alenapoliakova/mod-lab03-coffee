@@ -74,8 +74,7 @@ void Automata::choice(int menu_position) {
             throw std::invalid_argument("Error, incorrect value");
         }
         state = CHECK;
-        option = menu_position;
-        std::cout << "Your choice is " << menu[option - 1] << std::endl;
+        std::cout << "Your choice is " << menu[menu_position - 1] << std::endl;
         getState();
     } else {
         throw std::domain_error("Error, incorrect operation");
@@ -90,9 +89,8 @@ bool Automata::check() {
         }
         getState();
         return false;
-    } else {
-        throw std::domain_error("Error, incorrect operation");
     }
+    throw std::domain_error("Error, incorrect operation");
 }
 
 void Automata::cook() {
@@ -130,15 +128,12 @@ void Automata::getState() {
         case OFF:
             std::cout << "The drink machine is off" << std::endl;
             break;
-
         case WAIT:
             std::cout << "Waiting for your action" << std::endl;
             break;
-
         case ACCEPT:
             std::cout << "Give money, please" << std::endl;
             break;
-
         case CHECK:
             std::cout << "Checking your balance..." << std::endl;
             break;
