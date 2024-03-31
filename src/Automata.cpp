@@ -51,7 +51,7 @@ void Automata::coin(int money) {
         cash += money;
         getState();
     } else {
-        throw std::domain_error("Error, Incorrect operation");
+        throw std::domain_error("Error, incorrect operation");
     }
 }
 
